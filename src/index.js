@@ -7,6 +7,7 @@ import findIndexes from 'find-indices';
  * @param {Function} [comparator=lodash.isequal] The compare function
  * @param {Object} [options = {}]
  * @param {number} [options.fromIndex=0] The index to search from
+ * @param {boolean} [options.onlyFirstSet=false] The flag, if true only the first set is returned
  * @return {Array<Array>} The array of found indexes sets
  * @example
  * import findIndexesOfDuplicates from 'find-indices-of-duplicates';
@@ -31,12 +32,19 @@ export default (array, comparator = isEqual, options = {}) => {
     return [];
   }
 
-  const { fromIndex = 0 } = options;
+  const {
+    fromIndex = 0,
+    onlyFirstSet = false
+  } = options;
 
   const visited = new Set();
 
   const search = (current, duplicates) => {
     if (current >= array.length) {
+      return duplicates;
+    }
+
+    if (onlyFirstSet && duplicates.length > 0) {
       return duplicates;
     }
 

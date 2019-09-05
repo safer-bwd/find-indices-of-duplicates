@@ -20,6 +20,7 @@ Returns indexes of duplicate elements in an array.
 -   `comparator` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** The compare function (optional, default `lodash.isequal`)
 -   `options` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)**  (optional, default `{}`)
     -   `options.fromIndex` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** The index to search from (optional, default `0`)
+    -   `options.onlyFirstSet` **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** The flag, if true only the first set is returned (optional, default `false`)
 
 #### Examples
 
