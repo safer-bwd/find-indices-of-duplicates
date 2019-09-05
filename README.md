@@ -18,7 +18,8 @@ Returns indexes of duplicate elements in an array.
 
 -   `array` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)** The array to search
 -   `comparator` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** The compare function (optional, default `lodash.isequal`)
--   `option` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)**  (optional, default `{}`)
+-   `options` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)**  (optional, default `{}`)
+    -   `options.fromIndex` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** The index to search from (optional, default `0`)
 
 #### Examples
 

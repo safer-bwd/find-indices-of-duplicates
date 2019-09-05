@@ -5,7 +5,8 @@ import findIndexes from 'find-indices';
  * @name find-indices-of-duplicates
  * @param {Array} array The array to search
  * @param {Function} [comparator=lodash.isequal] The compare function
- * @param {Object} [option = {}]
+ * @param {Object} [options = {}]
+ * @param {number} [options.fromIndex=0] The index to search from
  * @return {Array<Array>} The array of found indexes sets
  * @example
  * import findIndexesOfDuplicates from 'find-indices-of-duplicates';
@@ -25,11 +26,12 @@ import findIndexes from 'find-indices';
  * const comparator = (user1, user2) => user1.id === user2.id
  * findIndexesOfDuplicates(users, comparator); // [[0, 6], [1, 3, 5]]
  * */
-// eslint-disable-next-line no-unused-vars
 export default (array, comparator = isEqual, options = {}) => {
   if (array.length === 0) {
     return [];
   }
+
+  const { fromIndex = 0 } = options;
 
   const visited = new Set();
 
@@ -51,5 +53,5 @@ export default (array, comparator = isEqual, options = {}) => {
     return search(current + 1, duplicates);
   };
 
-  return search(0, []);
+  return search(fromIndex, []);
 };

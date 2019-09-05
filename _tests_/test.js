@@ -23,3 +23,8 @@ it('should work with a custom `comparator`', async () => {
   const comparator2 = (a, b) => a.name === b.name;
   expect(findIndexes(users, comparator2)).toEqual([[0, 3, 6, 7], [1, 5]]);
 });
+
+it('should work with a positive option `fromIndex`', async () => {
+  expect(findIndexes(users, undefined, { fromIndex: 1 })).toEqual([[1, 5], [6, 7]]);
+  expect(findIndexes(users, undefined, { fromIndex: 4 })).toEqual([[6, 7]]);
+});
