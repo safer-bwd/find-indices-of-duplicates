@@ -37,7 +37,7 @@ const users = [
 ];
 
 const comparator = (user1, user2) => user1.id === user2.id
-findIndexesOfDuplicates(users, comparator); // [[0, 6], [1, 3, 5]
+findIndexesOfDuplicates(users, comparator); // [[0, 6], [1, 3, 5]]
 ```
 
 Returns **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)>** The array of found indexes sets

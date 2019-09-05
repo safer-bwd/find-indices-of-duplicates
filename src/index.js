@@ -24,7 +24,7 @@ import findIndexes from 'find-indices';
  * ];
  *
  * const comparator = (user1, user2) => user1.id === user2.id
- * findIndexesOfDuplicates(users, comparator); // [[0, 6], [1, 3, 5]
+ * findIndexesOfDuplicates(users, comparator); // [[0, 6], [1, 3, 5]]
  * */
 // eslint-disable-next-line no-unused-vars
 export default (array, comparator = isEqual, options = {}) => {
