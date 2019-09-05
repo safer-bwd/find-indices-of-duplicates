@@ -21,6 +21,7 @@ Returns indexes of duplicate elements in an array.
 -   `options` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)**  (optional, default `{}`)
     -   `options.fromIndex` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** The index to search from (optional, default `0`)
     -   `options.onlyFirstSet` **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** The flag, if true only the first set is returned (optional, default `false`)
+    -   `options.onlyFirst` **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** The flag, if true only the first duplicate is returned (optional, default `false`)
 
 #### Examples
 

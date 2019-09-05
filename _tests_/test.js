@@ -33,3 +33,8 @@ it('should work with an option `onlyFirstSet`', async () => {
   expect(findIndexes(users, undefined, { onlyFirstSet: false })).toEqual([[0, 6, 7], [1, 5]]);
   expect(findIndexes(users, undefined, { onlyFirstSet: true })).toEqual([[0, 6, 7]]);
 });
+
+it('should work with an option `onlyFirst`', async () => {
+  expect(findIndexes(users, undefined, { onlyFirst: false })).toEqual([[0, 6, 7], [1, 5]]);
+  expect(findIndexes(users, undefined, { onlyFirst: true })).toEqual([[0, 6]]);
+});

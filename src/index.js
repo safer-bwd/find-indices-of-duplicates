@@ -8,6 +8,7 @@ import findIndexes from 'find-indices';
  * @param {Object} [options = {}]
  * @param {number} [options.fromIndex=0] The index to search from
  * @param {boolean} [options.onlyFirstSet=false] The flag, if true only the first set is returned
+ * @param {boolean} [options.onlyFirst=false] The flag, if true only the first duplicate is returned
  * @return {Array<Array>} The array of found indexes sets
  * @example
  * import findIndexesOfDuplicates from 'find-indices-of-duplicates';
@@ -34,7 +35,8 @@ export default (array, comparator = isEqual, options = {}) => {
 
   const {
     fromIndex = 0,
-    onlyFirstSet = false
+    onlyFirstSet = false,
+    onlyFirst = false
   } = options;
 
   const visited = new Set();
@@ -44,14 +46,15 @@ export default (array, comparator = isEqual, options = {}) => {
       return duplicates;
     }
 
-    if (onlyFirstSet && duplicates.length > 0) {
+    if ((onlyFirstSet || onlyFirst) && duplicates.length > 0) {
       return duplicates;
     }
 
     if (!visited.has(current)) {
       const value = array[current];
       const predicate = comparator.bind(null, value);
-      const indexes = findIndexes(array, predicate, current + 1);
+      const limit = onlyFirst ? 1 : -1;
+      const indexes = findIndexes(array, predicate, current + 1, limit);
       if (indexes.length > 0) {
         duplicates.push([current, ...indexes]);
         indexes.forEach(index => visited.add(index));
