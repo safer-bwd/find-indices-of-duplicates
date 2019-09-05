@@ -10,9 +10,6 @@ import findIndexes from 'find-indices';
  * @example
  * import findIndexesOfDuplicates from 'find-indices-of-duplicates';
  *
- * const numbers = [1, 2, 3, 2, 5, 5, 6, 7, 2];
- * findIndexesOfDuplicates(numbers); // [[1, 3, 8], [4, 5]]
- *
  * const users = [
  *  { id: 1, name: 'Jon' },
  *  { id: 2, name: 'Fred' },
@@ -22,6 +19,8 @@ import findIndexes from 'find-indices';
  *  { id: 2, name: 'Fred' },
  *  { id: 1, name: 'Jon' },
  * ];
+ *
+ * findIndexesOfDuplicates(users); // [[0, 6], [1, 5]]
  *
  * const comparator = (user1, user2) => user1.id === user2.id
  * findIndexesOfDuplicates(users, comparator); // [[0, 6], [1, 3, 5]]
