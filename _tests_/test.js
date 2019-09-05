@@ -12,14 +12,14 @@ const users = [
   { id: 1, name: 'Jon' },
 ];
 
-it('should work with a default comparator', async () => {
+it('should work with a default `comparator`', async () => {
   expect(findIndexes([])).toEqual([]);
   expect(findIndexes(numbers)).toEqual([[1, 3, 8], [4, 5]]);
-  expect(findIndexes(mixedSet)).toEqual([[1, 3, 8], [4, 5]]);
+  expect(findIndexes(mixedSet)).toEqual([[0, 4], [5, 7]]);
   expect(findIndexes(users)).toEqual([[0, 6], [1, 5]]);
 });
 
-it('should work with a custom comparator', async () => {
+it('should work with a custom `comparator`', async () => {
   expect(findIndexes([], () => true)).toEqual([]);
 
   const comparator1 = (a, b) => a.id === b.id;
@@ -32,5 +32,5 @@ it('should work with a custom comparator', async () => {
   expect(findIndexes(mixedSet, comparator3)).toEqual([[5, 7, 8]]);
 
   const comparator4 = (a, b) => a === b;
-  expect(findIndexes(mixedSet, comparator3)).toEqual([]);
+  expect(findIndexes(mixedSet, comparator4)).toEqual([]);
 });
