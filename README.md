@@ -1,4 +1,5 @@
 # find-indices-of-duplicates
+[![Build Status](https://travis-ci.com/safer-bwd/find-indices-of-duplicates.svg?branch=master)](https://travis-ci.com/safer-bwd/find-indices-of-duplicates)
 
 Returns indexes of duplicate elements in an array.
 
