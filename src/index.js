@@ -1,6 +1,32 @@
 import isEqual from 'lodash.isequal';
 import findIndexes from 'find-indices';
 
+/**
+ * @name find-indices-of-duplicates
+ * @param {Array} array The array to search
+ * @param {Function} [comparator=lodash.isequal] The compare function
+ * @param {Object} [option = {}]
+ * @return {Array<Array>} The array of found indexes sets
+ * @example
+ * import findIndexesOfDuplicates from 'find-indices-of-duplicates';
+ *
+ * const numbers = [1, 2, 3, 2, 5, 5, 6, 7, 2];
+ * findIndexesOfDuplicates(numbers); // [[1, 3, 8], [4, 5]]
+ *
+ * const users = [
+ *  { id: 1, name: 'Jon' },
+ *  { id: 2, name: 'Fred' },
+ *  { id: 3, name: 'Bob' },
+ *  { id: 2, name: 'Jon' },
+ *  { id: 4, name: 'Mike' },
+ *  { id: 2, name: 'Fred' },
+ *  { id: 1, name: 'Jon' },
+ * ];
+ *
+ * const comparator = (user1, user2) => user1.id === user2.id
+ * findIndexesOfDuplicates(users, comparator); // [[0, 6], [1, 3, 5]
+ * */
+// eslint-disable-next-line no-unused-vars
 export default (array, comparator = isEqual, options = {}) => {
   if (array.length === 0) {
     return [];

@@ -1,7 +1,7 @@
 {
   "name": "find-indices-of-duplicates",
-  "version": "0.1.0",
-  "description": "",
+  "version": "0.1.1",
+  "description": "Returns indexes of duplicate elements in an array",
   "main": "dist/index.js",
   "repository": {
     "type": "git",
