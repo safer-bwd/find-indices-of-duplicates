@@ -1,0 +1,55 @@
+{
+  "name": "find-indices-of-duplicates",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/safer-bwd/find-indices-of-duplicates.git"
+  },
+  "author": "Anton Safronov <safer.anton@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/safer-bwd/find-indices-of-duplicates/issues"
+  },
+  "homepage": "https://github.com/safer-bwd/find-indices-of-duplicates#readme",
+  "scripts": {
+    "doc": "documentation readme src/** -s API --markdown-toc false",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "cross-env NODE_ENV=test jest --colors",
+    "build": "cross-env NODE_ENV=production babel src --out-dir dist",
+    "prepublishOnly": "npm run build"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "verbose": true
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/runtime": "^7.5.5",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^24.9.0",
+    "babel-plugin-add-module-exports": "^1.0.2",
+    "cross-env": "^5.2.0",
+    "documentation": "^12.1.1",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.15.2",
+    "jest": "^24.9.0"
+  },
+  "dependencies": {
+    "lodash.findindex": "^4.6.0"
+  },
+  "browserslist": [
+    "maintained node versions",
+    "last 2 version",
+    "> 5%",
+    "not dead"
+  ]
+}
