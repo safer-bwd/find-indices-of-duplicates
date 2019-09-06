@@ -6,7 +6,9 @@ Returns indexes of duplicate elements in an array.
 
 ## Install
 
-    npm install find-indices-of-duplicates --save
+```sh
+npm install find-indices-of-duplicates --save
+```
 
 ## API
 
