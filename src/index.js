@@ -2,7 +2,7 @@ import isEqual from 'lodash.isequal';
 import findIndexes from 'find-indices';
 
 /**
- * @name find-indices-of-duplicates
+ * @function find-indices-of-duplicates
  * @param {Array} array The array to search
  * @param {Function} [comparator=lodash.isequal] The compare function
  * @param {Object} [options = {}]
@@ -27,7 +27,7 @@ import findIndexes from 'find-indices';
  *
  * const comparator = (user1, user2) => user1.id === user2.id
  * findIndexesOfDuplicates(users, comparator); // [[0, 6], [1, 3, 5]]
- * */
+ */
 export default (array, comparator = isEqual, options = {}) => {
   if (array.length === 0) {
     return [];
@@ -51,10 +51,8 @@ export default (array, comparator = isEqual, options = {}) => {
     }
 
     if (!visited.has(current)) {
-      const value = array[current];
-      const predicate = comparator.bind(null, value);
-      const limit = onlyFirst ? 1 : -1;
-      const indexes = findIndexes(array, predicate, current + 1, limit);
+      const predicate = comparator.bind(null, array[current]);
+      const indexes = findIndexes(array, predicate, current + 1, onlyFirst ? 1 : -1);
       if (indexes.length > 0) {
         duplicates.push([current, ...indexes]);
         indexes.forEach(index => visited.add(index));
