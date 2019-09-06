@@ -40,11 +40,11 @@
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.1",
     "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jest": "^22.15.2",
+    "eslint-plugin-jest": "^22.17.0",
     "jest": "^24.9.0"
   },
   "dependencies": {
-    "find-indices": "^0.1.2",
+    "find-indices": "^0.1.3",
     "lodash.isequal": "^4.5.0"
   },
   "browserslist": [
